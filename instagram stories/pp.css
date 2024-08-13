@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=League+Spartan:wght@100;200;300;400;500;600;700;800&family=Lugrasimo&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+
+#partners{
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 90vh;
+    
+
+    width: 100%;
+    height: 100%;
+    --s: 200px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+  
+    background: repeating-conic-gradient(
+          from 30deg,
+          #0000 0 120deg,
+          var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+      repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+      );
+    background-size: var(--s) calc(var(--s) * 0.577);
+  
+  
+}
+
+#partners .ourpartners{
+    font-size: 46px;
+    line-height: 54px;
+    color: #fff;
+    font-family: 'Spartan', sans-serif;
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+  }
+  .wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapper i:first-child{
+    left: -22px;
+    z-index: 9;
+  }
+  .wrapper i:last-child{
+    right: -22px;
+  }
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 4) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 442px;
+    list-style: none;
+    background: transparent;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  
+  .carousel .card .image-content,
+  .carousel .card .description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+    width: 100%;
+    height: 50%;
+  }
+  
+  .carousel .card .image-content{
+    position: relative;
+    row-gap: 5px;
+  }
+  .carousel .card .img {
+    position: absolute;
+    top: 50px;
+    background: #ef3636;
+    height: 148px;
+    width: 148px;
+    border-radius: 50%;
+    padding: 3px;
+  }
+  
+/*  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #748698;
+    border-radius: 8px 8px 0px 37px;
+  }
+  
+  .overlay::before,
+  .overlay::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    width: 40px;
+    height: 40px;
+    background-color: #748698;
+  }
+  
+  .overlay::after{
+    border-radius: 0 35px 0 0;
+    background-color: #fff;
+  }*/
+
+
+  .card .img img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+  }
+  .carousel .card h2 {
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 30px 0 5px;
+    text-align: center;
+    color: tomato;
+  }
+  .carousel .card .description span {
+    color: #6A6D78;
+    font-size: 1.31rem;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+    }
+  }
+
+  .partners-button {
+    background: #ef3636;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 15px 30px;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.partners-button:hover{
+    background: #E3E6F3;
+    color: #000;
+}
